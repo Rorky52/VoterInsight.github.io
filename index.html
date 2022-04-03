@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<title>Votervoice</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="blue.css">
+        <style>
+            .header-blue{background:linear-gradient(135deg,#172a74,#21a9af);background-color:#184e8e;padding-bottom:40px;}
+        </style>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <script>
+
+            function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+              console.log('statusChangeCallback');
+              console.log(response);                   // The current login status of the person.
+              if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+                var r=confirm("Would you like to continue using FB?");  
+                if (r==true)
+                {  
+                testAPI();  
+                }
+              }
+            }
+          
+          
+            function checkLoginState() {               // Called when a person is finished with the Login Button.
+              FB.getLoginStatus(function(response) {   // See the onlogin handler
+                statusChangeCallback(response);
+              });
+            }
+          
+          
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '479120780078342',
+                cookie     : true,                     // Enable cookies to allow the server to access the session.
+                xfbml      : true,                     // Parse social plugins on this webpage.
+                version    : 'v10.0'           // Use this Graph API version for this call.
+              });
+          
+          
+              FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+                statusChangeCallback(response);        // Returns the login status.
+              });
+            };
+           
+            function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+              console.log('Welcome!  Fetching your information.... ');
+              FB.api('/me', function(response) {
+                document.location="user/menu.html";
+              });
+            }
+          
+          </script>
+        
+	</head>
+
+<body>
+
+    
+    <header class="header-blue" style="font-family: 'Aclonica'">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container-fluid"><a class="navbar-brand" href="#">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Voter Voice</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav"></ul>
+                    <form class="d-flex me-auto navbar-form" target="_self">
+                        <div class="d-flex align-items-center"></div>
+                    </form><span class="navbar-text"> <a class="btn btn-light action-button" href="user/login1.html">Log In</a></span>&nbsp;&nbsp;<a class="btn btn-light action-button" role="button" href="user/signup.html">Sign Up</a>
+                </div>
+            </div>
+        </nav>
+        <h1 style="color:white; text-align: center;">
+            Time for a change!
+        </h1>
+    </br>
+        <h2 style="color: white; text-align: center;">
+            The right way to do election!!
+        </h2>
+      
+    </header>
+    <div style="color: black; font-weight: bold; font-size: medium; font-family: 'Aclonica'; margin-left: 1in; margin-right: 1in;"> 
+        <br>
+    
+    <p>
+        For decade’s most of the political parties & politicians have been 
+        gathering votes based on caste, religion nepotism, fear. Although with 
+        the technological advancements, increase in the national literacy rate 
+        & high number of active numbers of first-time voters there has been 
+        a paradigm shift in country’s political platform. Voters are looking for 
+        a candidate that can deliver what they want as well as deliver it in a 
+        way that is beneficial for the society. The old methods of getting 
+        votes on the name of caste & religion aren’t working anymore. There 
+        have been a some unexpectable result’s in the past few years that has 
+        led to change in the conventional political roadmap of the country 
+        This project focuses on to get an insight regarding what does the 
+        population in a certain constituency needs and will help to raise their 
+        concerns and regards to all the candidates running for the office. 
+        This will basically focus on people that want to raise a voice and 
+        interact to the running candidates but are not able to do so due to 
+        their professional commitments. 
+
+    </p>
+        
+    <p>
+         On the other hand, it will also guide a roadmap to the candidates 
+        regarding the problem faced by the constituency and so that they can 
+        design their election manifesto keeping in mind the needs of the 
+        constituency. Moreover, it will also give an insight regarding what 
+        political party they vote for and what are the factors that affect 
+        their choice while voting.<br><br>
+        
+        Please share your thoughs with us so that we can built a community that can make a dent in the system. 
+    </p>
+</br>
+	<div style="text-align: center;">
+		<button class="btn btn-primary" onclick="location.href='user/signup.html';">Sign-Up</button>
+        <button class="btn btn-primary" onclick="location.href='user/login1.html';">Log-In</button>
+        <br> <br>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+	</div>
+    
+</div>
+<br>
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Launch your own survey!</a></li>
+                        <li><a href="#">Data Analytics</a></li>
+                        <li><a href="admin/alogin.html">Admin Corner</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>About Me</h3>
+                    <ul>
+                        <li>An IT&nbsp;enthusiast trying to use his knowledge &amp; skills to make a difference in the society.&nbsp;<br><br></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3></h3>
+                </div>
+                <div class="col item social"><a href="https://www.facebook.com/Rorky52" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/rorky_52" target="_blank"><i class="icon ion-social-twitter"></i></a><a href="https://www.linkedin.com/in/rorky52/" target="_blank"><i class="icon ion-social-linkedin" ></i></a><a href="https://www.instagram.com/rorky_52/" target="_blank"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Ratnesh Nagi © 2021</p>
+        </div>
+    </footer>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script id="bs-live-reload" data-sseport="51063" data-lastchange="1622969685796" src="/js/livereload.js"></script>
+</body>
+
+</html>
